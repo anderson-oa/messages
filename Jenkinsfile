@@ -1,13 +1,15 @@
 pipeline {
     agent any
     stages {        
-        stage('Package') {
+        stage('Build') {
             steps {
                 sh 'dotnet clean'
                 sh 'dotnet restore'
-                sh 'dotnet build'
-                sh 'dotnet pack --output /var/wwwroot/packages'
+                sh 'dotnet build'                
             }
+        }
+        stage('Package') { 
+            sh 'dotnet pack --output /var/wwwroot/packages'
         }
     }
 }
