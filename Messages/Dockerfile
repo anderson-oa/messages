@@ -3,6 +3,7 @@ WORKDIR /app
 
 COPY *.csproj ./
 RUN dotnet restore Messages.csproj
+RUN dotnet build Messages.csproj
 
 COPY . ./
 RUN dotnet pack Messages.csproj -c Release -o out
