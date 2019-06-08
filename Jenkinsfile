@@ -1,9 +1,11 @@
 pipeline {
     agent any
     stages {        
-        stage('Docker compose') {
+        stage('Package') {
             steps {
-                sh 'cd Messages; docker-compose up -d'
+                sh 'dotnet clean'
+                sh 'dotnet restore'
+                sh 'dotnet build'
             }
         }
     }
