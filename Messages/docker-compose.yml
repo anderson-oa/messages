@@ -1,9 +1,0 @@
-version: "3"
-
-services:
-  messages:
-    image: "messages:latest"
-    restart: always
-    build:
-      context: "."
-      dockerfile: "Dockerfile"
