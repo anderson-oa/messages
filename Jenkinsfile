@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Package') { 
             steps {
+                sh 'whoami'
                 sh 'dotnet pack --output /var/wwwroot/packages'
             }
         }
