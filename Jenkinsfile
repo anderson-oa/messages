@@ -6,7 +6,7 @@ pipeline {
                 sh 'dotnet clean'
                 sh 'dotnet restore'
                 sh 'dotnet build'
-                sh 'dotnet pack'
+                sh 'dotnet pack --output /home/ubuntu/Documentos'
             }
         }
     }
