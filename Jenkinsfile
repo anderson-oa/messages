@@ -9,7 +9,9 @@ pipeline {
             }
         }
         stage('Package') { 
-            sh 'dotnet pack --output /var/wwwroot/packages'
+            steps {
+                sh 'dotnet pack --output /var/wwwroot/packages'
+            }
         }
     }
 }
